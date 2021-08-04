@@ -33,7 +33,7 @@ ADD https://paddleocr.bj.bcebos.com/dygraph_v2.0/ch/ch_ppocr_mobile_v2.0_rec_inf
 RUN tar xf /PaddleOCR/inference/ch_ppocr_mobile_v2.0_rec_infer.tar -C /PaddleOCR/inference/
 
 # fix bug
-RUN sed -i '44c sys.version_info[:2] < (3, 8):' /usr/local/python3.7.0/lib/python3.7/site-packages/git/config.py
+RUN sed -i '44c if sys.version_info[:2] < (3, 8):' /usr/local/python3.7.0/lib/python3.7/site-packages/git/config.py
 
 EXPOSE 8868
 
